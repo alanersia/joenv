@@ -1,0 +1,6 @@
+[package]
+name = "typejo-consumer"
+version = "0.1.0"
+
+[dependencies]
+typejo = { git = "https://github.com/alanersia/typejo.git" }

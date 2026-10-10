@@ -1,0 +1,12 @@
+#!/bin/sh
+script=$0
+while [ -L "$script" ]; do
+    directory=$(CDPATH= cd -P -- "$(dirname -- "$script")" && pwd)
+    target=$(readlink -- "$script")
+    case $target in
+        /*) script=$target ;;
+        *) script=$directory/$target ;;
+    esac
+done
+repo=$(CDPATH= cd -P -- "$(dirname -- "$script")" && pwd)
+exec mojo run "$repo/src/main.mojo" "$@"

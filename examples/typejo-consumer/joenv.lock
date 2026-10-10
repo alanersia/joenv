@@ -1,0 +1,4 @@
+format = 1
+
+[dependencies]
+typejo = { git = "https://github.com/alanersia/typejo.git", commit = "f66eacffe2d659bcd1fa1d18339a9a6f34e44479", subdir = "typejo" }
